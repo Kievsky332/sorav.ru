@@ -29,5 +29,5 @@
         </div>
     </div>
     <?php
-        require_once "partials/header.html";
+        require_once "partials/footer.html";
     ?>

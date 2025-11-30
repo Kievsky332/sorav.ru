@@ -1,0 +1,49 @@
+.maini{
+    width: 97vw;
+    border-radius: 20px;
+    background-color: rgba(239, 230, 221, 0.81);
+    position: relative;
+    padding: 20px;
+}
+.black{
+    color:rgb(0, 0, 0);
+    padding-right: 100px;
+}
+.black1{
+   color:rgb(0, 0, 0); 
+}
+#cci{
+    width: max-content;
+    background-color: rgba(122, 122, 122, 0.82);
+    border-radius: 20px;
+    padding: 10px;
+}
+#leftina, #centrina , #rightina{
+    display: inline-block; 
+    width: max-content;
+}
+
+#centrina{
+    border-radius: 20px;
+    background: #C4C4C4;
+    padding: 10px;
+    color: black;
+    max-width: 250px;
+}
+#qq{
+    font-size: 10px;
+}
+#cc{
+    color: #1DADB8;
+}
+input[type=email]{
+    font-size: 20px;
+    background: #C4C4C4;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+#rightina{
+    color:black;
+    max-width: 200px;
+    margin-left: 200px;
+}
