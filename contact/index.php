@@ -7,7 +7,9 @@
         <?php
             require_once "..\partials\header.html";
         ?>
-        <center><p>Наша приватность непобедима!</p></center>
+        <center><p>Наши контакты</p></center>
+        <p><a href="t.me/imyrj">TG : @imyrj<a></p>
+        <p><a href="mailto: te3tor123@gmail.com">te3tor123@gmail.com</a></p>
         
     </div>
     <?php

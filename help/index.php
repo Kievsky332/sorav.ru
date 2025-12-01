@@ -7,7 +7,7 @@
         <?php
             require_once "..\partials\header.html";
         ?>
-        <center><p>Наша приватность непобедима!</p></center>
+        <center><p>Тут типо пожертвование автору</p></center>
         
     </div>
     <?php
