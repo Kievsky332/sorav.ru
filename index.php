@@ -1,15 +1,16 @@
 <?php
             require_once "partials/base.html";
-            
+               
 ?>
 <link rel="stylesheet" href="css/style1.css">
 <body>
+    
     <div id="main">
         <?php
             require_once "partials/header.html";
         ?>
-        <center><img id="imglogo" src="https://i.pinimg.com/236x/c8/cc/24/c8cc24bba37a25c009647b8875aae0e3.jpg" ></center><br>
-        <center><input type="button"value="Рассказать эмоции"> </center><br>
+        <center><input type="image" id="imglogo" src="https://cdn-icons-png.flaticon.com/512/10942/10942081.png" value="aw" onclick="awu()"></center><br>
+        <center><input type="button" value="Рассказать эмоции"> </center><br>
         <div id="HI" class="divi">
             <center><h2>За сегодня:</h2></center>
             <div>
@@ -27,7 +28,9 @@
             <img src="image.png" class="menshe">
            <center> <p class="bolshe">12379</p></center>
         </div>
+        
     </div>
     <?php
         require_once "partials/footer.html";
     ?>
+    <script src="main.js"></script>

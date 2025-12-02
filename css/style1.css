@@ -6,7 +6,8 @@
     border-radius: 360px;
 }
 #main{
-    height: 53vw;
+    width: 100vw;
+    height: 100vh;
 }
 .divi{
     background: #272935;
