@@ -7,7 +7,7 @@ a{
   color: white;
   text-decoration: none;
 }
-input[type=button] {
+input[type=button] ,#pon {
    background-color: #51BCBC;
    border-radius: 22px;
    padding:10px;
