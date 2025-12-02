@@ -5,10 +5,6 @@
     margin-top: 10%;
     border-radius: 360px;
 }
-#main{
-    width: 100vw;
-    height: 100vh;
-}
 .divi{
     background: #272935;
     padding: 0 10px 10px 10px ;
@@ -19,16 +15,10 @@
 #HI{
     left: 0;
 }
-.menshe{
-    width: 100px;
-    height: 100px;
-    float: left; 
-    margin-left: 10px;
-}
+
 .bolshe{
     font-size: 24px;
 }
 #right11{
     right: 4px;
-    
 }

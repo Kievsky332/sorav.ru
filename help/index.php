@@ -1,7 +1,6 @@
 <?php
             require_once "..\partials\base.html";         
 ?>
-<link rel="stylesheet" href="..\css\style1.css">
 <body>
     <div id="main">
         <?php

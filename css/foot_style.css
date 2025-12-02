@@ -36,7 +36,7 @@
 #cc{
     color: #1DADB8;
 }
-input[type=email]{
+#mailsub{
     font-size: 20px;
     background: #C4C4C4;
     border-radius: 20px;
