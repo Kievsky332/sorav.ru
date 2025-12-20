@@ -1,10 +1,8 @@
 <?php
-            require_once "..\partials\base.html";         
+            require_once "../partials/base.html";         
 ?>
-<body>
-    <div id="main">
         <?php
-            require_once "..\partials\header.html";
+            require_once "../partials/header.html";
         ?>
         <center>
         <form action="../login-php/auth.php" method="post" >
@@ -31,7 +29,5 @@
             </div>
         </form></center>
     <?php
-        require_once "..\partials/footer.html";
+        require_once "../partials/footer.html";
     ?>
-    </div>
-</body>

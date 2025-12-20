@@ -16,3 +16,8 @@
     position: absolute;
     left: 50%;
 }
+@media (max-width: 480px) {
+    #center1{
+        display: none;
+    }
+}

@@ -1,15 +1,12 @@
 <?php
-            require_once "..\partials\base.html";         
+            require_once "../partials/base.html";         
 ?>
-<body>
-    <div id="main">
         <?php
-            require_once "..\partials\header.html";
+            require_once "../partials/header.html";
         ?>
-        <center><p>Тут типо пожертвование автору</p></center>
+        <center><p>Если хотите помочь автору то </p></center>
+        <p>+79933057642 -Т. Банк<br>В примечание укажите : пожертвование автору sorav.ru</p>
         
-    </div>
     <?php
-        require_once "..\partials/footer.html";
+        require_once "../partials/footer.html";
     ?>
-</body>
