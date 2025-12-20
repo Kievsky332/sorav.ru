@@ -41,5 +41,5 @@ ALTER TABLE `auth`
   MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2019915474;
 ```
 # CRON
-login-php/del_table.php - На 00:00
+login-php/del_table.php - На 00:00 <br>
 login-php/rass_send.php - на 12:00
