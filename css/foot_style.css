@@ -22,7 +22,6 @@
 }
 #leftina, #centrina , #rightina{
     display: inline-block; 
-    width: max-content;
 }
 
 #centrina{
@@ -47,4 +46,10 @@
 #rightina{
     color:black;
     max-width: 200px;
+}
+@media (min-width: 1024px){
+    #rightina{
+        position: absolute;
+        right:  20px;
+    }
 }
