@@ -3,11 +3,10 @@
             require_once "partials/base.html";            
 ?>
 
-<link rel="stylesheet" href="css/style1.css">
+<link rel="stylesheet" href="../css/style1.css">
     
-    <div id="main">
         <?php
-            require_once "partials/header.html";
+            require_once "partials/header.php";
         ?>
         <center><input type="image"     id="imglogo" src="https://cdn-icons-png.flaticon.com/512/10942/10942081.png" onclick="awu()"></center><br>
         <form action="../login-php/emoji-send.php" method="post" >
@@ -25,7 +24,7 @@
 }
 $user_ip = getClientIp();
     $date =  date("Y-m-d H:i:s");
-    $msql = new mysqli("localhost","#","#","#");
+    $msql = new mysqli("#","#","#","#");
     $result = $msql->query("SELECT COUNT(*) FROM `reacts` WHERE `ip` = '$user_ip'");
     $row = $result->fetch_assoc(); // Fetches one row as an associative array
     $ip = $row['COUNT(*)'];

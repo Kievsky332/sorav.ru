@@ -10,10 +10,10 @@
     }
     elseif (!empty($emailrass)){
         $msql->query("INSERT INTO `rass` (`date`,`rass`)VALUES('$date','$emailrass')");
-        echo "Почта теперь в рассылке <a href='/'>Назад.</a>";
+        echo "Почта теперь в рассылке <br>Мы рады что вы выбрали нас! <a href='/'>Назад.</a>";
     }
     else{
-        echo "Не пустую почту! <a href="/">Назад.</a>";
+        echo "Не пустую почту! <a href='/'>Назад.</a>";
     }
 $msql->close();
     

@@ -1,10 +1,15 @@
+       
     <div id="main">
         <link rel="stylesheet" href="../css/head_style.css">
         <header>
             <a class="obsh" id="logo" href="/">sorav.ru</a>
             <a id="center1" href="../somatic">Грусть или счастье?</a>
+                <?php if (!isset($_COOKIE['user']) || empty($_COOKIE['user'])): 
+    ?>
             <a  href="../login" class="obsh" id="right1" >Логин / Регистрация</a>
-        
+                <?php else:?>
+        <p  class="obsh" id="right1">Привет , <?=$_COOKIE['user']?>! <br> <br><a href="../login-php/exit.php"><u>Выход</u></a>.</p>
+    <?php endif;?>
         
         
         

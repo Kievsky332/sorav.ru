@@ -12,7 +12,7 @@ function getClientIp() {
 
 $user_ip = getClientIp();
     $date =  date("Y-m-d H:i:s");
-    $msql = new mysqli("localhost","#","#","#");
+    $msql = new mysqli("#","#","#","#");
     $result = $msql->query("SELECT COUNT(*) FROM `reacts` WHERE `ip` = '$user_ip'");
     $row = $result->fetch_assoc(); // Fetches one row as an associative array
     $ip = $row['COUNT(*)'];

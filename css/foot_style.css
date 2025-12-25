@@ -34,18 +34,19 @@
 #qq{
     font-size: 10px;
 }
-#cc{
-    color: #1DADB8;
-}
 #mailsub{
     font-size: 20px;
     background: #C4C4C4;
     border-radius: 20px;
     padding-left: 10px;
 }
+#cc{
+    color: #1DADB8;
+}
 #rightina{
     color:black;
     max-width: 200px;
+
 }
 @media (min-width: 1024px){
     #rightina{

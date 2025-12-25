@@ -2,6 +2,9 @@ html,body{
    background-color:#101922; 
    color:white;
 }
+u{
+    color: #1DADB8;
+}
 
 .menshe{
     width: 100px;
@@ -34,7 +37,3 @@ input[type=button] ,#submi,input#pon {
 }
 
 
-#main{
-    width:98vw; 
-    height: 100vh;
-}

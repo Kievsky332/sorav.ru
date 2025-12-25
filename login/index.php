@@ -2,7 +2,7 @@
             require_once "../partials/base.html";         
 ?>
         <?php
-            require_once "../partials/header.html";
+            require_once "../partials/header.php";
         ?>
         <center>
         <form action="../login-php/auth.php" method="post" >

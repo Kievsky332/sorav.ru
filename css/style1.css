@@ -5,6 +5,10 @@
     margin-top: 10%;
     border-radius: 360px;
 }
+#main{
+    width:98vw; 
+    height: 100vh;
+}
 .divi{
     background: #272935;
     padding: 0 10px 10px 10px ;

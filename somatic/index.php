@@ -2,16 +2,33 @@
             require_once "../partials/base.html";         
 ?>
         <?php
-            require_once "../partials/header.html";
+            require_once "../partials/header.php";
         ?>
+        <?php
+            if (empty(($_GET['st']))): 
+        ?>
+        
         <center><p>Статьи:</p></center>
         <ol>
-            <li>Как не довести себя до критики</li>
-            <li>Как не быть славой</li>
-            <li>Как держать чуство за дверью</li>
-            <li>Гузилов г. а. история успеха</li>
-            <lI>Спасите мою математику. я хочу стипендию</lI>
+            <a href="?st=1"><li>Как не довести себя до критики</li></a>
+            <a href="?st=2"><li>#</li></a>
+            <a href="?st=3"><li>#</li></a>
         </ol>
+        
+
+        <?php elseif($_GET['st']):?>
+        <?php 
+        $a = $_GET['st'];
+        if (file_exists("../st/$a.html")) {
+            echo "<style>img{width:500px}</style>";
+            require_once "../st/$a.html";
+        } else {
+            echo '<link rel="stylesheet" href="../css/style1.css"><br><br><br><center>Такой статьи ещё нету!</center><style>center{color:red;}</style>';
+        }
+        ?>
+        
+ 
+        <?php endif;?>
         
     <?php
         require_once "../partials/footer.html";

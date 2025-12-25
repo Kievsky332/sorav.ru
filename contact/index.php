@@ -3,7 +3,7 @@
 ?>
 <link rel="stylesheet" href="../css/style1.css">
         <?php
-            require_once "../partials/header.html";
+            require_once "../partials/header.php";
         ?>
         <center><p>Наши контакты</p></center>
         <p><a href="https://t.me/imyrj">TG : @imyrj<a></p>

@@ -1,13 +1,9 @@
 <?php
-    $msql = new mysqli("#","#","#","#");
-    $regem = filter_var(trim($_POST["regemail"]),
-    FILTER_SANITIZE_STRING);
-    $regname = filter_var(trim($_POST["regname"]),
-    FILTER_SANITIZE_STRING);
-    $regpass = filter_var(trim($_POST["regpass"]),
-    FILTER_SANITIZE_STRING);
-    $regpassrep = filter_var(trim($_POST["regrepass"]),
-    FILTER_SANITIZE_STRING);
+    $msql = new mysqli("localhost","u3348639_user","xP3nP3rN0dcU6yA2","u3348639_users");
+    $regem = filter_var(trim($_POST["regemail"]));
+    $regname = filter_var(trim($_POST["regname"]));
+    $regpass = filter_var(trim($_POST["regpass"]));
+    $regpassrep = filter_var(trim($_POST["regrepass"]));
     $result1  = $msql->query("SELECT * FROM `auth` WHERE `email` = '$regem'");
     $user1 = $result1->fetch_assoc();
     if (mb_strlen($regem)<1 || mb_strlen($regem)>32){
@@ -16,7 +12,7 @@
     }
 
     elseif (!empty($user1)){
-        echo "Пользователь уже есть <a href="/">Назад.</a>";
+        echo "Пользователь уже есть <a href='/'>Назад.</a>";
         exit();
     }
     
