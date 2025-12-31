@@ -1,14 +1,15 @@
-       
+    	
     <div id="main">
+    
         <link rel="stylesheet" href="../css/head_style.css">
         <header>
             <a class="obsh" id="logo" href="/">sorav.ru</a>
-            <a id="center1" href="../somatic">Грусть или счастье?</a>
+            <a id="center1" href="../somatic"><u>Статьи</u></a>
                 <?php if (!isset($_COOKIE['user']) || empty($_COOKIE['user'])): 
     ?>
-            <a  href="../login" class="obsh" id="right1" >Логин / Регистрация</a>
+            <a  href="../login" class="obsh" id="right1" >Вход</a>
                 <?php else:?>
-        <p  class="obsh" id="right1">Привет , <?=$_COOKIE['user']?>! <br> <br><a href="../login-php/exit.php"><u>Выход</u></a>.</p>
+        <p  class="obsh" id="right1">Привет , <a href="../account/"><u><?=$_COOKIE['user']?>! </u></a></p>
     <?php endif;?>
         
         
@@ -36,19 +37,5 @@
 <noscript><div><img src="https://mc.yandex.ru/watch/105682360" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
 <!-- /Yandex.Metrika counter -->
 
-<script>
-  // Initialize the agent on page load.
-  const fpPromise = import('https://fpjscdn.net/v3/6Kfm8i7tkJ5NctWR8NtV')
-    .then(FingerprintJS => FingerprintJS.load({
-      region: "eu"
-    }))
 
-  // Get the visitorId when you need it.
-  fpPromise
-    .then(fp => fp.get())
-    .then(result => {
-      const visitorId = result.visitorId
-      console.log(visitorId)
-    })
-</script>
     </header>

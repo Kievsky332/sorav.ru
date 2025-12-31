@@ -1,6 +1,8 @@
 Сайт полностю готов!
 sorav.ru 
 Где # заполните данные базы данных
+# Для гугла нужен apiclient
+## composer require google/apiclient
 # Какие базы данных надо создать?
 ## reacts - Реакции
 ```sql

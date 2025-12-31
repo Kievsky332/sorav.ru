@@ -1,6 +1,7 @@
 <?php
-            $data = include 'login-php/last_emoji.php'; 
-            require_once "partials/base.html";            
+            $data = require 'login-php/last_emoji.php'; 
+            require_once "partials/base.html";   
+            require "login-php/setting.php";  
 ?>
 
 <link rel="stylesheet" href="../css/style1.css">
@@ -8,6 +9,7 @@
         <?php
             require_once "partials/header.php";
         ?>
+  
         <center><input type="image"     id="imglogo" src="https://cdn-icons-png.flaticon.com/512/10942/10942081.png" onclick="awu()"></center><br>
         <form action="../login-php/emoji-send.php" method="post" >
              <input type="hidden" id="emoter" name="emote" value="1">
@@ -22,9 +24,10 @@
     }
     return $ip;
 }
+
 $user_ip = getClientIp();
     $date =  date("Y-m-d H:i:s");
-    $msql = new mysqli("#","#","#","#");
+    $msql = new mysqli($reacts[0],$reacts[1],$reacts[2],$reacts[3]);
     $result = $msql->query("SELECT COUNT(*) FROM `reacts` WHERE `ip` = '$user_ip'");
     $row = $result->fetch_assoc(); // Fetches one row as an associative array
     $ip = $row['COUNT(*)'];
@@ -47,7 +50,7 @@ $msql->close();
                 <img class="menshe"  src="https://cdn-icons-png.flaticon.com/512/12657/12657875.png">
                 <p class="bolshe"><?php echo htmlspecialchars($data['negativ']); ?></p>
             </div>
-            <center><h3>Последнаяя реакция:</h3></center>
+            <center><h3>Последняя реакция:</h3></center>
             <img class='menshe'src=
     <?php 
     if ($data['last'] == 0) {

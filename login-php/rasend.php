@@ -3,7 +3,8 @@ date_default_timezone_set('Europe/Moscow');
 $date = date("H:i");
 require("kiwi.php");
     if($date =="08:00"){
-        $msql = new mysqli("#","#","#","#");
+        require "../login-php/setting.php";
+        $msql = new mysqli($reacts[0],$reacts[1],$reacts[2],$reacts[3]);
         $sql = "SELECT * FROM `rass`";
         $result = $msql->query($sql);
         if ($result->num_rows > 0) {

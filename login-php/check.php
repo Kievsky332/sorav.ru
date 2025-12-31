@@ -1,5 +1,6 @@
 <?php
-    $msql = new mysqli("localhost","u3348639_user","xP3nP3rN0dcU6yA2","u3348639_users");
+require "../login-php/setting.php";
+    $msql = new mysqli($users[0],$users[1],$users[2],$users[3]);
     $regem = filter_var(trim($_POST["regemail"]));
     $regname = filter_var(trim($_POST["regname"]));
     $regpass = filter_var(trim($_POST["regpass"]));
@@ -32,9 +33,9 @@
     while (!empty($user)){
         $uida = rand();
     }
-    $regpass = md5("#".$regpass."#");
-    $regpassrep = md5("#".$regpassrep."#");
-    $msql = new mysqli("#","#","#","#");
+    $regpass = md5($a1.$regpass.$a2);
+    $regpassrep = md5($a1.$regpassrep.$a2);
+    $msql = new mysqli($users[0],$users[1],$users[2],$users[3]);
     $msql->query("INSERT INTO `auth` (`id`,`email`,`pass`,`name`)
     VALUES('$uida','$regem','$regpass','$regname')");
     $msql->close();

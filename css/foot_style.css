@@ -1,5 +1,4 @@
 .maini{
-    width: 95vw;
     border-radius: 20px;
     background-color: rgba(239, 230, 221, 0.81);
     position: relative;
@@ -20,19 +19,19 @@
     border-radius: 20px;
     padding: 10px;
 }
-#leftina, #centrina , #rightina{
+#leftina, .centrina , #rightina{
     display: inline-block; 
 }
 
-#centrina{
+#centrina1{
+    
     border-radius: 20px;
     background: #C4C4C4;
     padding: 10px;
     color: black;
-    max-width: 250px;
 }
 #qq{
-    font-size: 10px;
+    font-size: 15px;
 }
 #mailsub{
     font-size: 20px;
