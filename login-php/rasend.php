@@ -2,9 +2,9 @@
 date_default_timezone_set('Europe/Moscow');
 $date = date("H:i");
 require("kiwi.php");
-    if($date =="08:00"){
-        require "../login-php/setting.php";
-        $msql = new mysqli($reacts[0],$reacts[1],$reacts[2],$reacts[3]);
+    if($date=="08:00"){
+        require "setting.php";
+        $msql = new mysqli( $users[0],$users[1],$users[2],$users[3]);
         $sql = "SELECT * FROM `rass`";
         $result = $msql->query($sql);
         if ($result->num_rows > 0) {
@@ -14,8 +14,8 @@ require("kiwi.php");
                     $to = $email; 
                     $tob = '?' . rawurlencode('email') . '=' . rawurlencode($email);
                     
-                    $subject = "=?utf-8?B?".base64_encode("Пару позитивчика для тебя ")."?="; 
-                    $b = mt_rand( 1, 20);
+                    $subject = "=?utf-8?B?".base64_encode("Позитив 😀")."?="; 
+                    $b = mt_rand( 1, 150);
                     $c = $quotes[$b];
                     $message = $c."<br> Если хочешь отписатся <a href='sorav.ru/login-php/del_email.php$tob'>Кликини сюда!</a>";
                     

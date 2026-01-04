@@ -12,7 +12,7 @@ function getClientIp() {
 
 $user_ip = getClientIp();
     $date =  date("Y-m-d H:i:s");
-    require "../login-php/setting.php";
+    require "setting.php";
     $msql =  new mysqli ($reacts[0],$reacts[1],$reacts[2],$reacts[3]);
     $result = $msql->query("SELECT COUNT(*) FROM `reacts` WHERE `ip` = '$user_ip '");
     $row = $result->fetch_assoc(); // Fetches one row as an associative array
@@ -25,7 +25,7 @@ $user_ip = getClientIp();
 }
     else{
         
-        $emo = $_POST["emote"];
+        $emo = strip_tags($_POST["emote"]);
         if ($emo==1 or $emo==0){
             $msql->query("INSERT INTO `reacts` (`ip`,`Sadly`,`date_time`)
             VALUES('$user_ip','$emo','$date')");

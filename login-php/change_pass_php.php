@@ -1,10 +1,10 @@
 <?php
-    require "../login-php/setting.php";
+    require "setting.php";
     $email = $_COOKIE['mail'];
     
-    $pass = filter_var(trim($_POST["pass"]));
-    $newpass = filter_var(trim($_POST["newpass"]));
-    $renewpass = filter_var(trim($_POST["newpass1"]));
+    $pass = strip_tags($_POST["pass"]);
+    $newpass = strip_tags($_POST["newpass"]);
+    $renewpass = strip_tags($_POST["newpass1"]);
     
     $pass = md5($a1.$pass.$a2);
     $newpass = md5($a1.$newpass.$a2);

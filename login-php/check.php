@@ -1,10 +1,10 @@
 <?php
-require "../login-php/setting.php";
+require "setting.php";
     $msql = new mysqli($users[0],$users[1],$users[2],$users[3]);
-    $regem = filter_var(trim($_POST["regemail"]));
-    $regname = filter_var(trim($_POST["regname"]));
-    $regpass = filter_var(trim($_POST["regpass"]));
-    $regpassrep = filter_var(trim($_POST["regrepass"]));
+    $regem = strip_tags($_POST["regemail"]);
+    $regname = strip_tags($_POST["regname"]);
+    $regpass = strip_tags($_POST["regpass"]);
+    $regpassrep = strip_tags($_POST["regrepass"]);
     $result1  = $msql->query("SELECT * FROM `auth` WHERE `email` = '$regem'");
     $user1 = $result1->fetch_assoc();
     if (mb_strlen($regem)<1 || mb_strlen($regem)>32){

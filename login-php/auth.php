@@ -1,7 +1,7 @@
 <?php
-require "../login-php/setting.php";
-    $login = filter_var(trim($_POST["login"]));
-    $pass = filter_var(trim($_POST["pass"]));
+require "setting.php";
+    $login = strip_tags($_POST["login"]);
+    $pass = strip_tags($_POST["pass"]);
     $pass = md5($a1.$pass.$a2);
     $msql = new  mysqli($users[0],$users[1],$users[2],$users[3]);
     $result  = $msql->query("SELECT * FROM `auth` WHERE `email` = '$login'  AND `pass` = '$pass'");

@@ -1,6 +1,6 @@
 <?php
     require "../login-php/setting.php";
-    $email = $_GET['email'] ;
+    $email = strip_tags($_GET['email']) ;
     $msql = new mysqli($users[0],$users[1],$users[2],$users[3]);
     $result  = $msql->query("SELECT * FROM `rass` WHERE `rass` = '$email'");
     $user_rass = $result->fetch_assoc();

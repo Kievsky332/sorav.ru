@@ -1,6 +1,6 @@
 <?php
     require "setting.php";
-    $emailrass = ($_POST["emailsub"]);
+    $emailrass = strip_tags($_POST["emailsub"]);
     $date =  date("Y-m-d");
     $msql = new mysqli($users[0],$users[1],$users[2],$users[3]);
     $result  = $msql->query("SELECT * FROM `rass` WHERE `rass` = '$emailrass'");

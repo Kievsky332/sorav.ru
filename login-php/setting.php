@@ -1,11 +1,11 @@
 <?php
 // require "../login-php/setting.php";
 // $users[0],$users[1],$users[2],$users[3]
-$users =["localhost","","",""];
+$users =["#","#","#","#"];
 
-$reacts =["localhost","","",""];
-//$reacts[0],$reacts[1],$react[2],$react[3]
+$reacts =["#","#","#","#"];
+//$reacts[0],$reacts[1],$reacts[2],$reacts[3]
 
-$a1 = "";
-$a2 = "";
+$a1 = "#";
+$a2 = "#";
 ?>

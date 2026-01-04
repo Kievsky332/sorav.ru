@@ -1,8 +1,8 @@
 <?php
-    require "../login-php/setting.php";
-    $email = $_COOKIE['mail'];
+    require "setting.php";
+    $email = strip_tags($_COOKIE['mail']);
     
-    $pass = filter_var(trim($_POST["pass"]));
+    $pass = strip_tags($_POST["pass"]);
     
     $pass = md5($a1.$pass.$a2);
     
@@ -16,15 +16,18 @@
             setcookie('user', '', time() - 3600, '/');
             setcookie('mail', '', time() - 3600, '/');
             echo "Аккаунт удалён <a href='/'>Назад.</a>";
-            exit();
+            
             $to = $email; 
             $subject = "=?utf-8?B?".base64_encode("Удаление аккаунта ")."?="; 
             $message = "<br> Привет мы получили от тебя запрос на удаление аккаунта! <br><br>Ваш аккаунт был удален с сайта sorav.ru";
             $headers  = "From: Удалялка <del_email@sorav.ru>\r\nReply-to: Админ <admin@sorav.ru>\r\nContent-type: text/html; charset=utf-8 \r\n"; 
             mail($to, $subject, $message, $headers); 
+            exit();
         }
         else if(empty($user_rass)){
             echo "Пароль не верный!";
+            $msql->close();
+            exit();
         }
         else{
             $msql->close();
