@@ -17,7 +17,11 @@ $userInfo = $oauth->userinfo->get();
 
 $name = $userInfo->name;
 $email = $userInfo->email;
+if(isset($_COOKIE['preference'])){
 setcookie('user',$name,time() +60*60*24*31 , "/"); 
 setcookie('mail',$email,time() +60*60*24*31 , "/"); 
 header("Location: /");
+}else{
+    echo "Вы не согласились!";
+};
 ?>

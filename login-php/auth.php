@@ -1,4 +1,5 @@
 <?php
+if(isset($_COOKIE['preference'])){
 require "setting.php";
     $login = strip_tags($_POST["login"]);
     $pass = strip_tags($_POST["pass"]);
@@ -16,5 +17,7 @@ require "setting.php";
         header("Location: /");
     }
     $msql->close();
-    
+}else{
+    echo "Вы не согласились!";
+};
 ?>

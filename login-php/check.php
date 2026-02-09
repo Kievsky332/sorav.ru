@@ -1,4 +1,5 @@
 <?php
+if(isset($_COOKIE['preference'])){
 require "setting.php";
     $msql = new mysqli($users[0],$users[1],$users[2],$users[3]);
     $regem = strip_tags($_POST["regemail"]);
@@ -8,7 +9,7 @@ require "setting.php";
     $result1  = $msql->query("SELECT * FROM `auth` WHERE `email` = '$regem'");
     $user1 = $result1->fetch_assoc();
     if (mb_strlen($regem)<1 || mb_strlen($regem)>32){
-        echo "Слишком короткий/длинная почта <a href="/">Назад.</a>";
+        echo "Слишком короткий/длинная почта <a href='/'>Назад.</a>";
         exit();
     }
 
@@ -18,13 +19,13 @@ require "setting.php";
     }
     
     elseif (mb_strlen($regpass)<1 || mb_strlen($regpass)>32){
-        echo "Слишком короткий/длинный пароль <a href="/">Назад.</a>";
+        echo "Слишком короткий/длинный пароль <a href='/'>Назад.</a>";
         exit();
     }
 
     
     elseif ($regpass != $regpassrep ){
-        echo "Пароли не совпадают <a href="/">Назад.</a>";
+        echo "Пароли не совпадают <a href='/'>Назад.</a>";
         exit();
     }
     $uida = rand();
@@ -40,4 +41,8 @@ require "setting.php";
     VALUES('$uida','$regem','$regpass','$regname')");
     $msql->close();
     header("Location: /") ;
+}
+else{
+    echo "Вы не согласились!";
+};
 ?>

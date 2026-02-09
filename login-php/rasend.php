@@ -17,7 +17,7 @@ require("kiwi.php");
                     $subject = "=?utf-8?B?".base64_encode("Позитив 😀")."?="; 
                     $b = mt_rand( 1, 150);
                     $c = $quotes[$b];
-                    $message = $c."<br> Если хочешь отписатся <a href='sorav.ru/login-php/del_email.php$tob'>Кликини сюда!</a>";
+                    $message = $c."<br> Если хочешь отписаться <a href='sorav.ru/login-php/del_email.php$tob'>Кликини сюда!</a>";
                     
                     
                     $headers  = "From: Позитив <pozitiv@sorav.ru>\r\nReply-to: Админ <admin@sorav.ru>\r\nContent-type: text/html; charset=utf-8 \r\n"; 

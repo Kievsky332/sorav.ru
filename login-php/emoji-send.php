@@ -10,6 +10,7 @@ function getClientIp() {
     return $ip;
 }
 
+if(isset($_COOKIE['preference'])){
 $user_ip = getClientIp();
     $date =  date("Y-m-d H:i:s");
     require "setting.php";
@@ -38,4 +39,7 @@ $user_ip = getClientIp();
         }
 
     }
+}else{
+    echo "Вы не согласились!";
+}
 ?>

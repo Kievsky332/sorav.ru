@@ -1,4 +1,4 @@
-    	
+<?php include_once(__DIR__ . "/../policity/cookies.php"); ?>
     <div id="main">
     
         <link rel="stylesheet" href="../css/head_style.css">

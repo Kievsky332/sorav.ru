@@ -1,4 +1,5 @@
 <?php
+if(isset($_COOKIE['preference'])){
     require "setting.php";
     $emailrass = strip_tags($_POST["emailsub"]);
     $date =  date("Y-m-d");
@@ -17,5 +18,9 @@
         echo "Не пустую почту! <a href='/'>Назад.</a>";
     }
 $msql->close();
+}
+else{
+    echo "Я запрещаю вам срать!";
+};
     
    
