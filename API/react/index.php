@@ -1,5 +1,6 @@
 <?php
-    require("setting.php");
+    require("../../login-php/setting.php");
+	header('Content-Type: application/json; charset=utf-8');
     $msql = new mysqli($reacts[0],$reacts[1],$reacts[2],$reacts[3]);
 
     $ab = $msql->query("SELECT Sadly FROM `reacts` WHERE Id = (SELECT MAX(Id) FROM reacts)");
@@ -24,6 +25,6 @@
     "pozy" => $b,
     "negativ" => $c
     ];
-    return $ui;
     $msql->close();
+	echo json_encode($ui);
 ?>

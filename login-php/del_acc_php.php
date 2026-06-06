@@ -1,6 +1,6 @@
 <?php
     require "setting.php";
-    $email = strip_tags($_COOKIE['mail']);
+    $email = strip_tags($_COOKIE['mail'])??'';
     
     $pass = strip_tags($_POST["pass"]);
     
@@ -25,9 +25,8 @@
             exit();
         }
         else if(empty($user_rass)){
-            echo "Пароль не верный!";
             $msql->close();
-            exit();
+            header("Location: /login-php/del_acc.php?lazy=1");
         }
         else{
             $msql->close();

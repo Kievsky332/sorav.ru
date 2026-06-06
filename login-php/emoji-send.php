@@ -20,9 +20,8 @@ $user_ip = getClientIp();
     $ip = $row['COUNT(*)'];
     
     if ($ip>0){
-        echo "Вы уже отправляли <a href='/'>Назад.</a>";
         $msql->close();
-        exit();
+        header("Location: /?lazy=3");
 }
     else{
         
@@ -31,15 +30,15 @@ $user_ip = getClientIp();
             $msql->query("INSERT INTO `reacts` (`ip`,`Sadly`,`date_time`)
             VALUES('$user_ip','$emo','$date')");
             $msql->close();
-            header("Location: /");
-            exit();
+            header("Location: /?lazy=4");
+            
         }
         else{
-            echo "Взлом - это плохо!";
+            header("Location: /?lazy=1");
         }
 
     }
 }else{
-    echo "Вы не согласились!";
+    header("Location: /?lazy=2");
 }
 ?>

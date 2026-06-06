@@ -17,22 +17,22 @@
         if ( !empty($user) and $newpass==$renewpass){
             $msql->query("UPDATE auth SET `pass`= '$newpass' WHERE email = '$email';");
             $msql->close();
-            echo "Пароль изменен <a href='/'>Назад.</a> ";
+            header("Location: /login-php/change_pass.php/lazy=1");
         }
         else if(empty($user)){
-            echo "Старый пароль не сходится! <a href='/'>Назад.</a>";
+            header("Location: /login-php/change_pass.php?lazy=2");
             $msql->close();
             exit();
         }
         else if($newpass!=$renewpass){
             $msql->close();
-            echo " Новые пароли не сходятся!  <a href='/'>Назад.</a>";
+            header("Location: /login-php/change_pass.php?lazy=3");
         }
         else{
-            echo "Ошибка!";
+            header("Location: /login-php/change_pass.php?lazy=4");
         }
     }
     else{
-        echo "У вас нету куки с почтой";
+        header("Location: /login-php/change_pass.php?lazy=5");
     }
 ?>

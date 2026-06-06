@@ -8,9 +8,30 @@
         <center>
         <?php if (!isset($_COOKIE['user']) || empty($_COOKIE['user'])): ?>
             <?php 
-require "../login-php/setup.php";
-?><br>
-<div class="google"><a href="<?= $client->createAuthUrl(); ?>">
+require_once "../login-php/setup.php";
+?>
+          <br>
+<?php
+        $a = $_GET['log'] ?? '';
+        $b = [
+            "" => "Не работает вход по гуглу",
+            0 =>"Вы не согласились!",
+            1 => "Проверьте пароль/логин",
+            2 => "ivan@example.com",
+            3 => "Слишком короткий/длинная почта" ,
+            4 => "Пользователь уже есть",
+            5 => "Слишком короткий/длинный пароль",
+            6 => "Пароли не совпадают"
+        ];
+        if ($a>6){
+            $c = "<script>alert('Взлом - это плохо!');</script>";
+        }else{
+            $c = $b[$a];
+        };
+        
+echo "<p style='color:red;'><b>$c</b></p>";
+?>
+<!-- <div class="google"><a href="<?= "Не работает по гуглу"//$client->createAuthUrl();  ?>">
           <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" x="0px" y="0px" class="google-icon" viewBox="0 0 48 48" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
             <path fill="#FFC107" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12
 	c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24
@@ -24,7 +45,7 @@ require "../login-php/setup.php";
           </svg>
           <span>Вход по гуглу</span>
         </a></div>
-<br>
+<br>-->
         <form action="../login-php/auth.php" method="post" >
             <div class="auth">
                 <h1>Логин</h1>

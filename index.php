@@ -3,7 +3,23 @@
             require_once "partials/base.html";   
             require "login-php/setting.php";  
 ?>
-
+        <?php 
+        $a = $_GET['lazy']??"";
+        $b = [
+            "" => "",
+            1 => "<script>alert('Взлом - это плохо!');</script>",
+            2 => "<script>alert('Вы не согласились!');</script>",
+            3 => "<script>alert('Вы уже отправляли');</script>",
+            4 => "<script>alert('Спасибо,что отправили');</script>"
+        ];
+        if ($a>4){
+            $c = "<script>alert('Взлом - это плохо!');</script>";
+        }else{
+            $c = $b[$a];
+        };
+        
+        
+        ?>
 <link rel="stylesheet" href="../css/style1.css">
     
         <?php
@@ -34,7 +50,7 @@ $user_ip = getClientIp();
 if ($ip>0) {
     echo '<center><input type="submit" id="pon" value="Подождите 24 часа" disabled> </center>';
 } else {
-    echo '<center><input type="submit" id="pon" value="Рассказать эмоции"> </center>';
+    echo '<center><input type="submit" id="pon" value="Рассказать "> </center>';
 }
 $msql->close();
 ?>
@@ -55,9 +71,11 @@ $msql->close();
     <?php 
     if ($data['last'] == 0) {
         echo "'https://cdn-icons-png.flaticon.com/512/12657/12657875.png'";
-    }  else  {
+    }  elseif($data['last'] == 1)  {
         echo "'https://cdn-icons-png.flaticon.com/512/10942/10942081.png'";
-    } 
+    }else{
+    	echo "'https://cdn-icons-png.flaticon.com/512/43/43625.png'";
+    }
     ?>
     >
 
@@ -73,6 +91,7 @@ $msql->close();
     </div>
 
     <script src="main.js"></script>
+    <?php echo $c; ?>
     <?php
         require_once "partials/footer.html";
     ?>

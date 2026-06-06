@@ -8,16 +8,17 @@ require "setting.php";
     $result  = $msql->query("SELECT * FROM `auth` WHERE `email` = '$login'  AND `pass` = '$pass'");
     $user = $result->fetch_assoc();
     if (empty($user)){
-        echo "Проверьте пароль/логин <a href='/'>Назад.</a>";
-        exit();
+        $msql->close();
+        header("Location: /login/?log=1");
     }
     else{
+        $msql->close();
         setcookie('user',$user['name'],time() +60*60*24*31 , "/"); 
         setcookie('mail',$user['email'],time() +60*60*24*31 , "/"); 
         header("Location: /");
     }
     $msql->close();
 }else{
-    echo "Вы не согласились!";
+    header("Location: /login/?log=0");
 };
 ?>

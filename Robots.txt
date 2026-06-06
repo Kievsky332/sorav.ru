@@ -1,7 +1,0 @@
-Sitemap: sorav/ru/sitemap.xml
-User-agent: *
-Allow: https://sorav.ru
-Allow: https://sorav.ru/404
-Disallow: https://sorav.ru/login
-Disallow: https://sorav.ru/help/
-Disallow: https://sorav.ru/contact/

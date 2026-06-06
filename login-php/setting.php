@@ -6,6 +6,8 @@ $users =["localhost","#","#","#"];
 $reacts =["localhost","#","#","#"];
 //$reacts[0],$reacts[1],$reacts[2],$reacts[3]
 
+//"localhost", "пользователь", "пароль", "имя_базы"
 $a1 = "#";
+
 $a2 = "#";
 ?>

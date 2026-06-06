@@ -8,6 +8,24 @@
         <?php if (isset($_COOKIE['user']) || !empty($_COOKIE['user'])): 
     ?>
         <br><br>
+        <?php 
+        $a = $_GET['lazy']??"";
+        $b = [
+            "" => "",
+            1 => "Пароль изменен",
+            2 => "Старый пароль не сходится!",
+            3 => "Новые пароли не сходятся" ,
+            4 => "Ошибка!",
+            5 => "У вас нету куки с почтой"
+        ];
+        if ($a>5){
+            $c = "<script>alert('Взлом - это плохо!');</script>";
+        }else{
+            $c = $b[$a];
+        };
+
+        echo "<center><p style='color:red;'><b>$c</b></p></center>";
+        ?>
         <form action="../login-php/change_pass_php.php" method="post" >
             <div>
                 <center>
@@ -18,7 +36,6 @@
                 </center>
             </div>
         </form>
-        </p>
         <style>
         .submit {
           border: none;

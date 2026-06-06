@@ -9,6 +9,20 @@
         <?php if (isset($_COOKIE['user']) || !empty($_COOKIE['user'])): 
     ?>
         <br><br>
+        <?php 
+        $email = strip_tags($_COOKIE['mail']);
+        $a = $_GET['lazy']??"";
+        $b = [
+            "" => "",
+            1 => "Пароль не верный!"
+        ];
+        if ($a !=4){
+            $c = "<script>alert('Взлом - это плохо!');</script>";
+        }else{
+            $c = $b[$a];
+        };
+        echo "<center><p style='color:red;'><b>$c</b></p></center>";
+        ?>
         <form action="../login-php/del_acc_php.php" method="post" >
             <div>
                 <center>

@@ -1,15 +1,15 @@
-<?php include_once(__DIR__ . "/../policity/cookies.php"); ?>
+<?php include_once(__DIR__ . "/../policity/cookies.php"); ?>   
     <div id="main">
-    
+    <header>
         <link rel="stylesheet" href="../css/head_style.css">
-        <header>
+     
             <a class="obsh" id="logo" href="/">sorav.ru</a>
             <a id="center1" href="../somatic"><u>Статьи</u></a>
                 <?php if (!isset($_COOKIE['user']) || empty($_COOKIE['user'])): 
     ?>
             <a  href="../login" class="obsh" id="right1" >Вход</a>
                 <?php else:?>
-        <p  class="obsh" id="right1">Привет , <a href="../account/"><u><?=$_COOKIE['user']?>! </u></a></p>
+        <p  class="obsh" id="right1">Привет , <a href="../account/"><u><?=strip_tags($_COOKIE['user'])?>! </u></a></p>
     <?php endif;?>
         
         

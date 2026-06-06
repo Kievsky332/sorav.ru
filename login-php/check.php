@@ -9,23 +9,23 @@ require "setting.php";
     $result1  = $msql->query("SELECT * FROM `auth` WHERE `email` = '$regem'");
     $user1 = $result1->fetch_assoc();
     if (mb_strlen($regem)<1 || mb_strlen($regem)>32){
-        echo "Слишком короткий/длинная почта <a href='/'>Назад.</a>";
+        header("Location: /login/?log=3");
         exit();
     }
 
     elseif (!empty($user1)){
-        echo "Пользователь уже есть <a href='/'>Назад.</a>";
+        header("Location: /login/?log=4");
         exit();
     }
     
     elseif (mb_strlen($regpass)<1 || mb_strlen($regpass)>32){
-        echo "Слишком короткий/длинный пароль <a href='/'>Назад.</a>";
+        header("Location: /login/?log=5");
         exit();
     }
 
     
     elseif ($regpass != $regpassrep ){
-        echo "Пароли не совпадают <a href='/'>Назад.</a>";
+        header("Location: /login/?log=6");
         exit();
     }
     $uida = rand();
@@ -43,6 +43,6 @@ require "setting.php";
     header("Location: /") ;
 }
 else{
-    echo "Вы не согласились!";
+    header("Location: /login/?log=0");
 };
 ?>
