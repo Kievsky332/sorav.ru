@@ -25,7 +25,7 @@
             require_once "partials/header.php";
         ?>
   
-        <center><input type="image"     class="mt-[100px] w-[200px] h-[200px]" src="https://cdn-icons-png.flaticon.com/512/10942/10942081.png" onclick="awu()"></center><br>
+        <center><input type="image"  id="imglogo"   class="mt-[100px] w-[200px] h-[200px]" src="https://cdn-icons-png.flaticon.com/512/10942/10942081.png" onclick="awu()"></center><br>
         <form action="../login-php/emoji-send.php" method="post" >
              <input type="hidden" id="emoter" name="emote" value="1">
              <?php
