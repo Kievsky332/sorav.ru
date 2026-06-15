@@ -20,54 +20,53 @@
         
         
         ?>
-<link rel="stylesheet" href="../css/style1.css">
     
         <?php
             require_once "partials/header.php";
         ?>
   
-        <center><input type="image"     id="imglogo" src="https://cdn-icons-png.flaticon.com/512/10942/10942081.png" onclick="awu()"></center><br>
+        <center><input type="image"     class="mt-[100px] w-[200px] h-[200px]" src="https://cdn-icons-png.flaticon.com/512/10942/10942081.png" onclick="awu()"></center><br>
         <form action="../login-php/emoji-send.php" method="post" >
              <input type="hidden" id="emoter" name="emote" value="1">
              <?php
              function getClientIp() {
-    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-        $ip = $_SERVER['HTTP_CLIENT_IP']; // IP от клиента (редко)
-    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR']; // IP через прокси/балансировщик
-    } else {
-        $ip = $_SERVER['REMOTE_ADDR']; // IP самого сервера (если нет прокси)
-    }
-    return $ip;
-}
+                if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+                    $ip = $_SERVER['HTTP_CLIENT_IP']; // IP от клиента (редко)
+                } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+                    $ip = $_SERVER['HTTP_X_FORWARDED_FOR']; // IP через прокси/балансировщик
+                } else {
+                    $ip = $_SERVER['REMOTE_ADDR']; // IP самого сервера (если нет прокси)
+                }
+                return $ip;
+            }
 
-$user_ip = getClientIp();
-    $date =  date("Y-m-d H:i:s");
-    $msql = new mysqli($reacts[0],$reacts[1],$reacts[2],$reacts[3]);
-    $result = $msql->query("SELECT COUNT(*) FROM `reacts` WHERE `ip` = '$user_ip'");
-    $row = $result->fetch_assoc(); // Fetches one row as an associative array
-    $ip = $row['COUNT(*)'];
-if ($ip>0) {
-    echo '<center><input type="submit" id="pon" value="Подождите 24 часа" disabled> </center>';
-} else {
-    echo '<center><input type="submit" id="pon" value="Рассказать "> </center>';
-}
-$msql->close();
-?>
+        $user_ip = getClientIp();
+            $date =  date("Y-m-d H:i:s");
+            $msql = new mysqli($reacts[0],$reacts[1],$reacts[2],$reacts[3]);
+            $result = $msql->query("SELECT COUNT(*) FROM `reacts` WHERE `ip` = '$user_ip'");
+            $row = $result->fetch_assoc(); // Fetches one row as an associative array
+            $ip = $row['COUNT(*)'];
+        if ($ip>0) {
+            echo '<center><input type="submit" class="bg-[#51bcbc] text-black text-center border-[3px] border-black rounded-[50px] px-[10px] py-[5px] text-[20px]" value="Подождите 24 часа"></center>';
+        } else {
+            echo '<center><input type="submit" class="bg-[#51bcbc] text-black text-center border-[3px] border-black rounded-[50px] px-[10px] py-[5px] text-[20px]" value="Рассказать"></center>';
+        }
+        $msql->close();
+        ?>
         </form>
 
-        <div id="HI" class="divi">
-            <center><h2>За сегодня:</h2></center>
+        <div class="bg-[#272935] inline-block text-white w-fit px-[20px] py-[5px] rounded-[20px]">
+            <h2 class="text-center">За сегодня:</h2>
             <div>
-                <img class="menshe" src="https://cdn-icons-png.flaticon.com/512/10942/10942081.png">
-                <p class="bolshe"><?php echo htmlspecialchars($data['pozy']); ?></p>
+                <img class="w-[100px] inline" src="https://cdn-icons-png.flaticon.com/512/10942/10942081.png">
+                <p class="inline"><?php echo htmlspecialchars($data['pozy']); ?></p>
             </div><br>
             <div>
-                <img class="menshe"  src="https://cdn-icons-png.flaticon.com/512/12657/12657875.png">
-                <p class="bolshe"><?php echo htmlspecialchars($data['negativ']); ?></p>
+                <img class="w-[100px] inline"  src="https://cdn-icons-png.flaticon.com/512/12657/12657875.png">
+                <p class="inline"><?php echo htmlspecialchars($data['negativ']); ?></p>
             </div>
-            <center><h3>Последняя реакция:</h3></center>
-            <img class='menshe'src=
+            <h3 class="text-center">Последняя реакция:</h3>
+            <img class="w-[100px]" src=
     <?php 
     if ($data['last'] == 0) {
         echo "'https://cdn-icons-png.flaticon.com/512/12657/12657875.png'";
@@ -80,7 +79,7 @@ $msql->close();
     >
 
         </div>
-        <div id="right11" class="divi">
+        <div  class="bg-[#272935]  absolute right-0 top-0flex w-64 ml-auto inline-block  w-min bottom-[10px] text-white px-[20px] py-[5px] rounded-[20px]">
             <p>Онлайн:</p>
             <script id="_waul0d">var _wau = _wau || []; _wau.push(["dynamic", "uk1uycuo0k", "l0d", "c4302bffffff", "small"]);</script><script async src="//waust.at/d.js"></script>
             <!-- Histats.com  START (html only)-->
@@ -88,7 +87,6 @@ $msql->close();
 <!-- Histats.com  END  -->
         </div>
         
-    </div>
 
     <script src="main.js"></script>
     <?php echo $c; ?>
