@@ -25,7 +25,7 @@
             require_once "partials/header.php";
         ?>
   
-        <center><input type="image"  id="imglogo"   class="mt-[100px] w-[200px] h-[200px]" src="https://cdn-icons-png.flaticon.com/512/10942/10942081.png" onclick="awu()"></center><br>
+        <center><input type="image"   id="imglogo"  class="mt-[100px] w-[200px] h-[200px]" src="https://cdn-icons-png.flaticon.com/512/10942/10942081.png" onclick="awu()"></center><br>
         <form action="../login-php/emoji-send.php" method="post" >
              <input type="hidden" id="emoter" name="emote" value="1">
              <?php
@@ -68,7 +68,7 @@
             <h3 class="text-center">Последняя реакция:</h3>
             <img class="w-[100px]" src=
     <?php 
-    if ($data['last'] == 0) {
+    if ($data['last'] == 2) {
         echo "'https://cdn-icons-png.flaticon.com/512/12657/12657875.png'";
     }  elseif($data['last'] == 1)  {
         echo "'https://cdn-icons-png.flaticon.com/512/10942/10942081.png'";
