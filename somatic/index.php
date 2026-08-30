@@ -9,7 +9,7 @@
         ?>
         <link rel="stylesheet" href="../css/style1.css">
         <center><p>Статьи:</p></center>
-        <ol>
+        <ol class="list-decimal list-inside">
             <a href="?st=1"><li>Как не довести себя до критики</li></a>
             <a href="?st=2"><li>Гузилов г. а. история успеха</li></a>
             <a href="?st=3"><li>Лисавина 💖 и наш любимый C#</li></a>

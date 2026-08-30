@@ -1,11 +1,10 @@
 <?php
             require_once "../partials/base.html";         
 ?>
-<link rel="stylesheet" href="../css/style1.css">
         <?php
             require_once "../partials/header.php";
         ?>
-        <center><p>404 ошибка !Страница не найдена .<a href="/">Назад.</a></center>
+        <p class="text-center">404 ошибка !Страница не найдена .<a href="/" class=" underline text-[#1eaeb8] ">Назад.</a>
         </p>
     <?php
         require_once "../partials/footer.html";
